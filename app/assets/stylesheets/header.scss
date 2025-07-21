@@ -21,4 +21,15 @@ $header-padding-y: 16px;
     height: $avatar-size;
     border-radius: 100%;
   }
+
+  &_logos {
+    min-width: 0;
+    display: flex;
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin: 12px 8px 0;
+    }
+  }
 }
