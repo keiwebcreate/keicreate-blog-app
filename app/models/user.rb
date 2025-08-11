@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: uers
+# Table name: users
 #
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
@@ -13,12 +13,22 @@
 #
 # Indexes
 #
-#  index_uers_on_email                 (email) UNIQUE
-#  index_uers_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
-class Uer < ApplicationRecord
+class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :articles, dependent: :destroy
+  #, foreign_key: 'user_id'
+
+  def has_written?(article)
+    articles.exists?(id: article.id)
+  end
+
+  def display_name
+    self.email.split('@').first
+  end
 end

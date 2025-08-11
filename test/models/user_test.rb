@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: uers
+# Table name: users
 #
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
@@ -13,16 +13,13 @@
 #
 # Indexes
 #
-#  index_uers_on_email                 (email) UNIQUE
-#  index_uers_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
+require "test_helper"
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+class UserTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
