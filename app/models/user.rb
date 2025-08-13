@@ -24,6 +24,7 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   #, foreign_key: 'user_id'
   has_one :profile, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   delegate :age, :birthday, :gender, to: :profile, allow_nil: true
 
