@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/' => 'articles#index'
 
   resources :articles do
-    resources :comments, only: [:new, :create, :destroy]
+    resources :comments, only: [:new, :create]
   end
+
+  resource :profile, only: [:show, :edit, :update]
 end
