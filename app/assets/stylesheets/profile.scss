@@ -4,9 +4,10 @@ $image_size: 56px;
 
 .profilePage {
   margin-top: 24px;
-
+  
   &_user {
     display: flex;
+    margin-bottom: 40px;
 
     &_image {
       display: flex;
@@ -51,6 +52,7 @@ $image_size: 56px;
 
     &_introduction {
       font-size: 12px;
+      
     }
   }
 }
