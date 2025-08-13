@@ -23,6 +23,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :articles, dependent: :destroy
   #, foreign_key: 'user_id'
+  has_one :profile, dependent: :destroy
 
   def has_written?(article)
     articles.exists?(id: article.id)
